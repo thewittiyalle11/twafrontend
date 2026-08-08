@@ -1,0 +1,316 @@
+openapi: 3.0.3
+info:
+  title: TWA Fashion Ecommerce API
+  version: 1.0.0
+  description: REST API contract for storefront, admin panel, and future mobile apps.
+
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Python backend (future)
+  - url: /api/v1
+    description: MSW mock (development)
+
+paths:
+  /banners:
+    get:
+      summary: List hero banners
+      responses:
+        '200':
+          description: Banner list
+
+  /categories:
+    get:
+      summary: List product categories
+      responses:
+        '200':
+          description: Category list
+
+  /products:
+    get:
+      summary: List products with filters
+      parameters:
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: tag
+          in: query
+          schema: { type: string, enum: [new-arrival, best-seller, season-top-pick] }
+        - name: sort
+          in: query
+          schema: { type: string, enum: [price_asc, price_desc, newest, popular] }
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 12 }
+      responses:
+        '200':
+          description: Paginated products
+
+  /products/{slug}:
+    get:
+      summary: Get product by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Product detail
+        '404':
+          description: Not found
+
+  /testimonials:
+    get:
+      summary: List testimonials
+      responses:
+        '200':
+          description: Testimonial list
+
+  /settings/social:
+    get:
+      summary: Social media settings
+      responses:
+        '200':
+          description: Social settings
+
+  /settings/brand:
+    get:
+      summary: Brand settings
+      responses:
+        '200':
+          description: Brand settings
+
+  /auth/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 6 }
+      responses:
+        '200':
+          description: Auth token and user
+
+  /auth/register:
+    post:
+      summary: User registration
+      responses:
+        '201':
+          description: Created user
+
+  /auth/guest-discount:
+    post:
+      summary: Capture guest email for discount
+      responses:
+        '200':
+          description: Coupon code
+
+  /cart:
+    get:
+      summary: Get cart summary
+      responses:
+        '200':
+          description: Cart summary
+
+  /cart/items:
+    post:
+      summary: Add item to cart
+      responses:
+        '200':
+          description: Updated cart
+
+  /cart/items/{id}:
+    patch:
+      summary: Update cart item quantity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Updated cart
+    delete:
+      summary: Remove cart item
+      responses:
+        '200':
+          description: Updated cart
+
+  /orders:
+    get:
+      summary: List user orders
+      responses:
+        '200':
+          description: Order list
+    post:
+      summary: Place order
+      responses:
+        '201':
+          description: Created order
+
+  /contact:
+    post:
+      summary: Submit contact form
+      responses:
+        '200':
+          description: Success
+
+  /admin/products:
+    get:
+      summary: Admin list products
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Product list
+    post:
+      summary: Create product
+      security: [{ bearerAuth: [] }]
+      responses:
+        '201':
+          description: Created product
+
+  /admin/products/{id}:
+    get:
+      summary: Get product by ID
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Product
+    patch:
+      summary: Update product
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Updated product
+    delete:
+      summary: Delete product
+      security: [{ bearerAuth: [] }]
+      responses:
+        '204':
+          description: Deleted
+
+  /admin/orders:
+    get:
+      summary: Admin list orders
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Order list
+
+  /admin/orders/{id}:
+    get:
+      summary: Get order detail
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Order
+    patch:
+      summary: Update order status
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Updated order
+
+  /admin/orders/{id}/ship:
+    post:
+      summary: Ship order with tracking
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Shipped order
+
+  /admin/invoices:
+    get:
+      summary: List invoices
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Invoice list
+
+  /admin/invoices/{orderId}:
+    get:
+      summary: Get invoice by order
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Invoice
+    post:
+      summary: Generate invoice for order
+      security: [{ bearerAuth: [] }]
+      responses:
+        '201':
+          description: Generated invoice
+
+  /admin/users:
+    get:
+      summary: List users
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: User list
+    patch:
+      summary: Update user (block/unblock)
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Updated user
+
+  /admin/campaigns:
+    get:
+      summary: List campaigns
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Campaign list
+    post:
+      summary: Create campaign
+      security: [{ bearerAuth: [] }]
+      responses:
+        '201':
+          description: Created campaign
+
+  /admin/campaigns/{id}:
+    patch:
+      summary: Update campaign
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Updated campaign
+    delete:
+      summary: Delete campaign
+      security: [{ bearerAuth: [] }]
+      responses:
+        '204':
+          description: Deleted
+
+  /admin/analytics/sales:
+    get:
+      summary: Sales dashboard analytics
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Analytics data
+
+  /admin/shipping/carriers:
+    get:
+      summary: List shipping carriers
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Carrier list
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

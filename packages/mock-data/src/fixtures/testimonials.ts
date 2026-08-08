@@ -1,0 +1,68 @@
+import type { Testimonial } from '@twa/shared';
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 'test_1',
+    customerName: 'Priya Sharma',
+    location: 'Mumbai, MH',
+    rating: 5,
+    comment: 'The linen kurta fits perfectly and the fabric quality is outstanding. Delivery was faster than expected!',
+    avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_2',
+    customerName: 'Arjun Mehta',
+    location: 'Bangalore, KA',
+    rating: 5,
+    comment: 'Love the monogram customization option. Makes gifting so special. Will definitely order again.',
+    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_3',
+    customerName: 'Ananya Reddy',
+    location: 'Hyderabad, TS',
+    rating: 4,
+    comment: 'Beautiful festive saree collection. The colors are even better in person. Slightly long delivery time but worth the wait.',
+    avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_4',
+    customerName: 'Rahul Kapoor',
+    location: 'Delhi, DL',
+    rating: 5,
+    comment: 'Best online shopping experience for Indian wear. Size guide was accurate and returns were hassle-free.',
+    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_5',
+    customerName: 'Sneha Patel',
+    location: 'Ahmedabad, GJ',
+    rating: 5,
+    comment: 'The sustainable collection is my go-to. Stylish and eco-friendly — exactly what I was looking for.',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_6',
+    customerName: 'Vikram Singh',
+    location: 'Jaipur, RJ',
+    rating: 4,
+    comment: 'Great value for money. The Nehru jacket I ordered gets compliments every time I wear it.',
+    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_7',
+    customerName: 'Meera Iyer',
+    location: 'Chennai, TN',
+    rating: 5,
+    comment: 'Kids collection is adorable and durable. My daughter loves her new lehenga!',
+    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
+  },
+  {
+    id: 'test_8',
+    customerName: 'Karan Malhotra',
+    location: 'Chandigarh, PB',
+    rating: 5,
+    comment: 'GST invoice was provided promptly for my business purchase. Professional service throughout.',
+    avatarUrl: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop',
+  },
+];

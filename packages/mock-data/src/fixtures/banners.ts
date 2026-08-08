@@ -1,0 +1,51 @@
+import type { Banner } from '@twa/shared';
+
+export const banners: Banner[] = [
+  {
+    id: 'banner_1',
+    title: 'Summer Collection 2026',
+    subtitle: 'Light fabrics. Bold silhouettes.',
+    type: 'image',
+    mediaUrl: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&h=700&fit=crop',
+    linkUrl: '/products?tag=new-arrival',
+    sortOrder: 1,
+  },
+  {
+    id: 'banner_2',
+    title: 'Festive Edit',
+    subtitle: 'Up to 30% off on ethnic wear',
+    type: 'image',
+    mediaUrl: 'https://images.unsplash.com/photo-1583391735258-47b2739512c2?w=1600&h=700&fit=crop',
+    linkUrl: '/products?category=festive',
+    sortOrder: 2,
+  },
+  {
+    id: 'banner_3',
+    title: 'Everyday Essentials',
+    subtitle: 'Premium cotton kurtas from ₹999',
+    type: 'image',
+    mediaUrl: 'https://images.unsplash.com/photo-1594938298604-c8148c4dae35?w=1600&h=700&fit=crop',
+    linkUrl: '/products?category=men',
+    sortOrder: 3,
+  },
+  {
+    id: 'banner_4',
+    title: 'Runway Highlights',
+    subtitle: 'Watch our latest fashion film',
+    type: 'video',
+    mediaUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&h=700&fit=crop',
+    linkUrl: '/products',
+    sortOrder: 4,
+  },
+  {
+    id: 'banner_5',
+    title: 'New Season Preview',
+    subtitle: 'Exclusive first look',
+    type: 'video',
+    mediaUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1483985988354-763728e1935b?w=1600&h=700&fit=crop',
+    linkUrl: '/products?tag=season-top-pick',
+    sortOrder: 5,
+  },
+];
