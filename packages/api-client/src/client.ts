@@ -18,10 +18,10 @@ export function getApiBaseUrl(): string {
       (window as unknown as { __API_BASE_URL__?: string }).__API_BASE_URL__ ??
       process.env.NEXT_PUBLIC_API_BASE_URL ??
       process.env.VITE_API_BASE_URL ??
-      '/api/v1'
+      '/api'
     );
   }
-  return process.env.NEXT_PUBLIC_API_BASE_URL ?? process.env.VITE_API_BASE_URL ?? '/api/v1';
+  return process.env.NEXT_PUBLIC_API_BASE_URL ?? process.env.VITE_API_BASE_URL ?? '/api';
 }
 
 let authToken: string | null = null;

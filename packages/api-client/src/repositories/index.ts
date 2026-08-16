@@ -86,7 +86,7 @@ export const authRepository = {
   login: (input: LoginInput) =>
     apiFetch<AuthResponse>('/auth/login', { method: 'POST', body: JSON.stringify(input) }),
   register: (input: RegisterInput) =>
-    apiFetch<AuthResponse>('/auth/register', { method: 'POST', body: JSON.stringify(input) }),
+    apiFetch<AuthResponse>('/users/register', { method: 'POST', body: JSON.stringify(input) }),
   guestDiscount: (input: GuestDiscountInput) =>
     apiFetch<GuestDiscountResponse>('/auth/guest-discount', {
       method: 'POST',

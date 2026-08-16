@@ -3,3 +3,5 @@ packages:
   - "packages/*"
 allowBuilds:
   msw: true
+minimumReleaseAgeExclude:
+  - pnpm@11.22.0

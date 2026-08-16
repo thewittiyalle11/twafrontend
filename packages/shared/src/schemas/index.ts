@@ -7,9 +7,10 @@ export const loginSchema = z.object({
 });
 
 export const registerSchema = z.object({
-  name: z.string().min(2, 'Name is required'),
-  email: z.string().email('Valid email required'),
+  name: z.string().min(2, 'Name is required').max(120, 'Name must be at most 120 characters'),
+  email: z.string().email('Valid email required').max(255, 'Email must be at most 255 characters'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
+  phone: z.string().min(6, 'Phone is required').max(30, 'Phone must be at most 30 characters'),
 });
 
 export const guestDiscountSchema = z.object({

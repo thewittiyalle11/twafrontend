@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useLogin } from '@twa/api-client';
@@ -56,6 +57,14 @@ export default function LoginPage() {
           <button type="submit" className="btn-primary w-full" disabled={login.isLoading}>
             {login.isLoading ? 'Signing in...' : 'Sign in'}
           </button>
+          <div className="mt-3 text-center">
+            <p className="text-sm text-gray-600">
+              Don't have an account?{' '}
+              <Link href="/register" className="text-brand-700 font-medium">
+                Register
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
     </div>
