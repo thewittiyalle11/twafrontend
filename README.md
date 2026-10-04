@@ -20,20 +20,20 @@ pnpm install
 From the repository root:
 
 ```bash
+cp apps/storefront/.env.example apps/storefront/.env.local
 pnpm dev:storefront
 ```
 
-This launches the storefront on `http://localhost:3000`.
+This launches the storefront on `http://localhost:3001`.
 
-## Mock API
+## Storefront environment
 
-The storefront uses MSW for mock APIs in development. The mock service worker file is served from `apps/storefront/public/mockServiceWorker.js`.
+The storefront loads environment variables from `apps/storefront/.env.local`. Start from the checked-in template at `apps/storefront/.env.example`; `.env.local` is ignored by Git.
 
-If you need to disable the mock API, set the environment variable:
+- `NEXT_PUBLIC_USE_MOCK_API=true` enables the local MSW mock API. Set it to `false` to send requests to the real API.
+- `NEXT_PUBLIC_API_BASE_URL` is the API base URL used when mocks are disabled. For local development, the user service is mounted at `http://localhost:8081/api`.
 
-```bash
-NEXT_PUBLIC_USE_MOCK_API=false
-```
+These `NEXT_PUBLIC_` values are bundled for browser use and must not contain secrets. Restart the storefront after changing them. The mock service worker file is served from `apps/storefront/public/mockServiceWorker.js`.
 
 ## Build for production
 

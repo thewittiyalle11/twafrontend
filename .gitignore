@@ -4,6 +4,7 @@ dist
 .turbo
 *.local
 .env
-.env.local
+.env.*
+!.env.example
 .DS_Store
 coverage

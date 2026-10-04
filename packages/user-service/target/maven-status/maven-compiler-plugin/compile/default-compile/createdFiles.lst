@@ -1,9 +1,0 @@
-com\twa\userservice\service\UserService.class
-com\twa\userservice\model\User$Role.class
-com\twa\userservice\repository\UserRepository.class
-com\twa\userservice\UserServiceApplication.class
-com\twa\userservice\config\SecurityConfig.class
-com\twa\userservice\model\User$AdminRole.class
-com\twa\userservice\dto\UserRegistrationRequest.class
-com\twa\userservice\controller\UserController.class
-com\twa\userservice\model\User.class
