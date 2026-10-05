@@ -57,8 +57,8 @@ export default function ContactPage() {
             />
             {errors.message && <p className="mt-2 text-xs text-red-600">{errors.message.message}</p>}
           </div>
-          <button type="submit" className="btn-primary w-full" disabled={contact.isLoading}>
-            {contact.isLoading ? 'Sending...' : 'Send message'}
+          <button type="submit" className="btn-primary w-full" disabled={contact.isPending}>
+            {contact.isPending ? 'Sending...' : 'Send message'}
           </button>
           {contact.isSuccess && <p className="text-sm text-green-600">Thank you! We will reply soon.</p>}
         </form>

@@ -185,6 +185,11 @@ export const mockStore = {
     const updated: Product = {
       ...existing,
       ...input,
+      images: input.images?.map((image, i) => ({
+        ...image,
+        id: generateId('img'),
+        sortOrder: i + 1,
+      })) ?? existing.images,
       effectivePrice: computeEffectivePrice(
         input.basePrice ?? existing.basePrice,
         input.discountPercent ?? existing.discountPercent

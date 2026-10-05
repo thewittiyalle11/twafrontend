@@ -140,8 +140,8 @@ export default function CheckoutPage() {
             <p className="text-xs text-gray-500">If billing address is left blank, shipping address will be used.</p>
           </div>
 
-          <button type="submit" className="btn-primary w-full" disabled={createOrder.isLoading || !cart?.items.length}>
-            {createOrder.isLoading ? 'Placing order…' : 'Place order'}
+          <button type="submit" className="btn-primary w-full" disabled={createOrder.isPending || !cart?.items.length}>
+            {createOrder.isPending ? 'Placing order…' : 'Place order'}
           </button>
           {createOrder.isSuccess && <p className="text-sm text-green-600">Order placed successfully! Redirecting…</p>}
         </form>

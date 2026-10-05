@@ -56,8 +56,8 @@ export default function RegisterPage() {
             {errors.phone && <p className="mt-2 text-xs text-red-600">{errors.phone.message}</p>}
           </div>
 
-          <button type="submit" className="btn-primary w-full" disabled={registerMut.isLoading}>
-            {registerMut.isLoading ? 'Registering...' : 'Create account'}
+          <button type="submit" className="btn-primary w-full" disabled={registerMut.isPending}>
+            {registerMut.isPending ? 'Registering...' : 'Create account'}
           </button>
         </form>
       </div>

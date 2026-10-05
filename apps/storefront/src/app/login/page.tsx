@@ -54,8 +54,8 @@ export default function LoginPage() {
             {errors.password && <p className="mt-2 text-xs text-red-600">{errors.password.message}</p>}
           </div>
 
-          <button type="submit" className="btn-primary w-full" disabled={login.isLoading}>
-            {login.isLoading ? 'Signing in...' : 'Sign in'}
+          <button type="submit" className="btn-primary w-full" disabled={login.isPending}>
+            {login.isPending ? 'Signing in...' : 'Sign in'}
           </button>
           <div className="mt-3 text-center">
             <p className="text-sm text-gray-600">

@@ -77,7 +77,7 @@ export async function apiFetch<T>(
   return response.json() as Promise<T>;
 }
 
-export function buildQuery(params: Record<string, string | number | undefined>): string {
+export function buildQuery<T extends { [K in keyof T]: string | number | undefined }>(params: T): string {
   const search = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined && value !== '') search.set(key, String(value));

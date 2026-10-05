@@ -139,9 +139,9 @@ export default function ProductDetailPage() {
               type="button"
               onClick={handleAddToCart}
               className="btn-primary w-full"
-              disabled={!selectedSize || addToCart.isLoading}
+              disabled={!selectedSize || addToCart.isPending}
             >
-              {addToCart.isLoading ? 'Adding to cart…' : 'Add to cart'}
+              {addToCart.isPending ? 'Adding to cart…' : 'Add to cart'}
             </button>
             <Link href="/checkout" className="btn-secondary w-full text-center">
               Buy now
@@ -168,7 +168,7 @@ export default function ProductDetailPage() {
               <div className="rounded-2xl bg-white p-3 text-brand-700">✔</div>
               <div>
                 <p className="text-sm font-semibold text-gray-900">Customization</p>
-                <p className="text-sm text-gray-600">Personalize your order with bespoke options.</p>
+                <p className="text-sm text-gray-600">Designed for you: Your preferred neck, sleeves, and outfit length to create your perfect style.</p>
               </div>
             </div>
           </div>
