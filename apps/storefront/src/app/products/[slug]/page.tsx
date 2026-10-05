@@ -16,7 +16,6 @@ export default function ProductDetailPage() {
   const addToCart = useAddToCart();
   const openCart = useCartUIStore((state) => state.openCart);
   const [selectedSize, setSelectedSize] = useState<ProductSize | ''>('');
-  const [quantity, setQuantity] = useState(1);
   const [customization, setCustomization] = useState<Record<string, string>>({});
   const [activeTab, setActiveTab] = useState<'details' | 'customization'>('details');
 
@@ -33,7 +32,7 @@ export default function ProductDetailPage() {
     await addToCart.mutateAsync({
       productId: product.id,
       size: selectedSize,
-      qty: quantity,
+      qty: 1,
       customization: Object.keys(customization).length ? customization : undefined,
     });
     openCart();
@@ -109,31 +108,10 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
-          <div className="space-y-3">
-            <label className="text-sm font-medium text-gray-900">Quantity</label>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setQuantity((qty) => Math.max(1, qty - 1))}
-                className="h-10 w-10 rounded-2xl border bg-white text-gray-700 hover:border-brand-700"
-              >
-                -
-              </button>
-              <span className="min-w-[2rem] text-center text-lg font-semibold">{quantity}</span>
-              <button
-                type="button"
-                onClick={() => setQuantity((qty) => Math.min(10, qty + 1))}
-                className="h-10 w-10 rounded-2xl border bg-white text-gray-700 hover:border-brand-700"
-              >
-                +
-              </button>
-            </div>
-          </div>
-
           <div className="space-y-4">
             <div className="flex items-center justify-between text-sm text-gray-600">
               <span>Subtotal</span>
-              <span>{formatINR(effectivePrice * quantity)}</span>
+              <span>{formatINR(effectivePrice)}</span>
             </div>
             <button
               type="button"
