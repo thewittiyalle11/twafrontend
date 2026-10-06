@@ -104,7 +104,9 @@ class ProductControllerTest {
         assertThat(product.path("isActive").asBoolean()).isTrue();
         assertThat(product.path("tags").isArray()).as(product.toString()).isTrue();
         assertThat(product.path("tags").get(0).asText()).isEqualTo("best-seller");
-        assertThat(product.path("customizationOptions").get(0).path("key").asText()).isEqualTo("monogram");
+        assertThat(product.path("customizationOptions").get(0).path("key").asText())
+            .as(product.toString())
+            .isEqualTo("monogram");
         assertThat(product.path("images").get(0).path("sortOrder").asInt()).isEqualTo(1);
         assertThat(product.path("sizes").get(0).path("size").asText()).isEqualTo("M");
         assertThat(product.path("sizes").get(0).path("stock").asInt()).isEqualTo(8);
