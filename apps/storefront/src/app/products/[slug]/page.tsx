@@ -2,10 +2,11 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { useProduct, useAddToCart } from '@twa/api-client';
+import { useProduct, useProducts, useAddToCart } from '@twa/api-client';
 import { useCartUIStore } from '@/lib/stores';
 import { formatINR } from '@twa/shared';
 import type { ProductSize } from '@twa/shared';
+import { ProductScroll } from '@/features/catalog/ProductCard';
 import Link from 'next/link';
 
 export default function ProductDetailPage() {
@@ -13,6 +14,7 @@ export default function ProductDetailPage() {
   const slug = params?.slug || '';
   const router = useRouter();
   const { data: product, isLoading } = useProduct(slug);
+  const newArrivalQuery = useProducts({ tag: 'new-arrival', limit: 8 });
   const addToCart = useAddToCart();
   const openCart = useCartUIStore((state) => state.openCart);
   const [selectedSize, setSelectedSize] = useState<ProductSize | ''>('');
@@ -53,6 +55,9 @@ export default function ProductDetailPage() {
       </div>
     );
   }
+
+  const recommendedProducts =
+    newArrivalQuery.data?.data.filter((item) => item.id !== product.id) ?? [];
 
   return (
     <div className="container-page py-12 space-y-10">
@@ -227,6 +232,13 @@ export default function ProductDetailPage() {
           )}
         </div>
       </section>
+
+      {recommendedProducts.length > 0 && (
+        <section className="space-y-6">
+          <h2 className="section-title">You may also like this products</h2>
+          <ProductScroll products={recommendedProducts} />
+        </section>
+      )}
     </div>
   );
 }
