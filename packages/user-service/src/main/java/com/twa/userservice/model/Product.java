@@ -44,13 +44,13 @@ public class Product {
     @Column(name = "is_active", nullable = false)
     private boolean active;
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(nullable = false, columnDefinition = "json")
-    private JsonNode tags;
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
+    private String tags;
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "customization_options", nullable = false, columnDefinition = "json")
-    private JsonNode customizationOptions;
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
+    @Column(name = "customization_options", nullable = false, columnDefinition = "LONGTEXT")
+    private String customizationOptions;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -75,8 +75,8 @@ public class Product {
     public BigDecimal getDiscountPercent() { return discountPercent; }
     public int getEstimatedDeliveryDays() { return estimatedDeliveryDays; }
     public boolean isActive() { return active; }
-    public JsonNode getTags() { return tags; }
-    public JsonNode getCustomizationOptions() { return customizationOptions; }
+    public String getTags() { return tags; }
+    public String getCustomizationOptions() { return customizationOptions; }
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public List<ProductImage> getImages() { return images; }

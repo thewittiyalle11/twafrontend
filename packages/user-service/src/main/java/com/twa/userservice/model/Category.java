@@ -34,4 +34,11 @@ public class Category {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    public String getId() { return id; }
+    public String getSlug() { return slug; }
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public String getImageUrl() { return imageUrl; }
+    public int getSortOrder() { return sortOrder; }
 }

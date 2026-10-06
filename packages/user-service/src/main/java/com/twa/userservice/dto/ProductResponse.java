@@ -94,6 +94,18 @@ public record ProductResponse(
         }
     }
 
+    private static JsonNode decodeJsonColumn(String value) {
+        if (value == null) {
+            return null;
+        }
+        try {
+            JsonNode decoded = JSON_MAPPER.readTree(value);
+            return decoded.isTextual() ? JSON_MAPPER.readTree(decoded.textValue()) : decoded;
+        } catch (JsonProcessingException exception) {
+            throw new IllegalStateException("Product JSON text column contains invalid JSON", exception);
+        }
+    }
+
     public record ProductImageResponse(String id, String url, String alt, int sortOrder) {}
     public record ProductSizeResponse(String size, String sku, int stock) {}
 }
