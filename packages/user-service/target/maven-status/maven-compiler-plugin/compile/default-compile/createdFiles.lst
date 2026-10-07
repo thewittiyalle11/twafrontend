@@ -1,4 +1,6 @@
 com/twa/userservice/dto/ProductResponse.class
+com/twa/userservice/dto/CategoryResponse.class
+com/twa/userservice/controller/CatalogController.class
 com/twa/userservice/controller/ProductController.class
 com/twa/userservice/service/ProductService.class
 com/twa/userservice/model/Product.class
@@ -6,10 +8,12 @@ com/twa/userservice/model/ProductSize.class
 com/twa/userservice/controller/ApiExceptionHandler.class
 com/twa/userservice/model/Category.class
 com/twa/userservice/model/ProductImage.class
+com/twa/userservice/service/CatalogService.class
 com/twa/userservice/repository/ProductSearchRepositoryImpl.class
 com/twa/userservice/repository/ProductRepository.class
 com/twa/userservice/dto/ProductResponse$ProductImageResponse.class
 com/twa/userservice/model/ProductSize$Size.class
 com/twa/userservice/repository/ProductSearchRepository.class
 com/twa/userservice/dto/ProductResponse$ProductSizeResponse.class
+com/twa/userservice/repository/CatalogRepository.class
 com/twa/userservice/dto/PaginatedResponse.class

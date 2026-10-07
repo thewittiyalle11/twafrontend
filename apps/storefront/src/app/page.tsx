@@ -84,32 +84,6 @@ export default function HomePage() {
       </section>
 
       <section className="container-page space-y-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-700">Season's top pick</p>
-            <h2 className="section-title">Curated for the season</h2>
-          </div>
-          <Link href="/products?tag=season-top-pick" className="text-sm font-medium text-brand-700 hover:text-brand-800">
-            Explore seasonal picks
-          </Link>
-        </div>
-
-        {seasonPicksQuery.data ? (
-          <div className="grid gap-6 md:grid-cols-3">
-            {seasonPicksQuery.data.data.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-3">
-            {[...Array(3)].map((_, index) => (
-              <div key={index} className="h-72 rounded-3xl bg-gray-100" />
-            ))}
-          </div>
-        )}
-      </section>
-
-      <section className="container-page space-y-6">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-brand-700">Testimonials</p>
           <h2 className="section-title">What our customers say</h2>

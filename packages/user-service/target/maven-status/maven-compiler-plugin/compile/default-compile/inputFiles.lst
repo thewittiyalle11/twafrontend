@@ -1,11 +1,14 @@
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/dto/ProductResponse.java
+/Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/service/CatalogService.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/repository/ProductSearchRepositoryImpl.java
+/Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/controller/CatalogController.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/dto/UserRegistrationRequest.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/controller/UserController.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/model/Product.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/model/Category.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/model/ProductImage.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/model/ProductSize.java
+/Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/repository/CatalogRepository.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/controller/ProductController.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/service/ProductService.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/model/User.java
@@ -15,5 +18,6 @@
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/UserServiceApplication.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/repository/ProductSearchRepository.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/config/SecurityConfig.java
+/Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/dto/CategoryResponse.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/controller/ApiExceptionHandler.java
 /Users/kushagrapandya/Documents/Projects/twafrontend/packages/user-service/src/main/java/com/twa/userservice/service/UserService.java
