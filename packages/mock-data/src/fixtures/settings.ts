@@ -7,8 +7,8 @@ export const brandSettings: BrandSettings = {
   supportEmail: 'hello@twafashion.in',
   supportPhone: '+91 98765 43210',
   social: {
-    instagramHandle: '@twafashion.in',
-    instagramUrl: 'https://instagram.com/twafashion.in',
+    instagramHandle: '@the_witty_alley',
+    instagramUrl: 'https://instagram.com/the_witty_alley',
     facebookUrl: 'https://facebook.com/twafashion',
     twitterUrl: 'https://twitter.com/twafashion',
   },
