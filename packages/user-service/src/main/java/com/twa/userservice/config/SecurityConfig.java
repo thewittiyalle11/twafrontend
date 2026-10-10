@@ -22,7 +22,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/users/register").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/products", "/api/products/{slug}").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/categories").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/categories", "/api/banners").permitAll()
                 .requestMatchers("/error").permitAll()
                 .anyRequest().authenticated()
             )
