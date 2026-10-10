@@ -46,10 +46,10 @@ class ProductControllerTest {
         jdbcTemplate.update(
             """
                 INSERT INTO products (
-                    id, slug, category_id, name, description, short_description,
+                    id, slug, category_id, name, description, short_description, video_url,
                     base_price, discount_percent, estimated_delivery_days, is_active,
                     tags, customization_options, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CAST(? AS JSON), CAST(? AS JSON), ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CAST(? AS JSON), CAST(? AS JSON), ?, ?)
                 """,
             PRODUCT_ID,
             "test-product",
@@ -57,6 +57,7 @@ class ProductControllerTest {
             "Test linen kurta",
             "A searchable test product",
             "Test product",
+            "https://example.com/product-video.mp4",
             new BigDecimal("200.00"),
             new BigDecimal("10.00"),
             4,
@@ -100,6 +101,7 @@ class ProductControllerTest {
         JsonNode product = body.path("data").get(0);
         assertThat(product.path("id").asText()).isEqualTo(PRODUCT_ID);
         assertThat(product.path("categoryId").asText()).isEqualTo("category_test");
+        assertThat(product.path("videoUrl").asText()).isEqualTo("https://example.com/product-video.mp4");
         assertThat(product.path("effectivePrice").decimalValue()).isEqualByComparingTo("180.00");
         assertThat(product.path("isActive").asBoolean()).isTrue();
         assertThat(product.path("tags").isArray()).as(product.toString()).isTrue();
@@ -129,5 +131,6 @@ class ProductControllerTest {
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         assertThat(response.getBody()).isNotNull();
         assertThat(response.getBody().path("slug").asText()).isEqualTo("test-product");
+        assertThat(response.getBody().path("videoUrl").asText()).isEqualTo("https://example.com/product-video.mp4");
     }
 }
