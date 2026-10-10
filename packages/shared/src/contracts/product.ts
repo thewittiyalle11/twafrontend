@@ -28,6 +28,7 @@ export interface Product {
   name: string;
   description: string;
   shortDescription?: string;
+  videoUrl?: string;
   images: ProductImage[];
   categoryId: string;
   basePrice: number;
@@ -88,6 +89,7 @@ export interface CreateProductInput {
   name: string;
   description: string;
   shortDescription?: string;
+  videoUrl?: string;
   categoryId: string;
   basePrice: number;
   discountPercent: number;

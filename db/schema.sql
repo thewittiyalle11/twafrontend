@@ -35,6 +35,7 @@
     name VARCHAR(180) NOT NULL,
     description TEXT NOT NULL,
     short_description VARCHAR(512),
+    video_url VARCHAR(1024) NULL,
     base_price DECIMAL(12,2) NOT NULL,
     discount_percent DECIMAL(5,2) NOT NULL DEFAULT 0,
     estimated_delivery_days INT NOT NULL DEFAULT 5,

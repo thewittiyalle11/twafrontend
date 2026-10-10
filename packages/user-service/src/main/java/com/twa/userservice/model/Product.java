@@ -32,6 +32,9 @@ public class Product {
     @Column(name = "short_description", length = 512)
     private String shortDescription;
 
+    @Column(name = "video_url", length = 1024)
+    private String videoUrl;
+
     @Column(name = "base_price", nullable = false, precision = 12, scale = 2)
     private BigDecimal basePrice;
 
@@ -71,6 +74,7 @@ public class Product {
     public String getName() { return name; }
     public String getDescription() { return description; }
     public String getShortDescription() { return shortDescription; }
+    public String getVideoUrl() { return videoUrl; }
     public BigDecimal getBasePrice() { return basePrice; }
     public BigDecimal getDiscountPercent() { return discountPercent; }
     public int getEstimatedDeliveryDays() { return estimatedDeliveryDays; }
